@@ -18,4 +18,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 5005
 
 # Commande pour démarrer Rasa
-CMD ["rasa", "run", "--enable-api"]
+CMD ["rasa", "run", "--enable-api", "--cors", "*", "--debug", "--port", "5005", "--host", "0.0.0.0"]
