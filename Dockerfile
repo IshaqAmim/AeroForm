@@ -18,4 +18,4 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 5005
 
 # Set default command
-CMD ["bash", "-c", "rasa run --enable-api --cors '*' --host 0.0.0.0 --port ${PORT:-5005}"]
+CMD ["bash", "-c", "rasa run --enable-api --cors '*' --port ${PORT:-5005}"]   
