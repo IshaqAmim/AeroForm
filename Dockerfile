@@ -17,5 +17,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Exposer le port (le port sera récupéré par Render via la variable d'environnement PORT)
 EXPOSE 5005
 
-# Commande pour démarrer Rasa, utilise la variable d'environnement pour le port et le host dynamique
-CMD ["rasa", "run", "--enable-api", "--cors", "*", "--port", "5005", "--host", "0.0.0.0"]
+# Set default command
+CMD ["bash", "-c", "rasa run --enable-api --cors '*' --host 0.0.0.0 --port ${PORT:-5005}"]
