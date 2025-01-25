@@ -1,0 +1,148 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - get_trainings
+  - get_dates_prices
+  - get_registration
+  - get_prerequisites
+  - get_financing
+  - get_indicators
+  - get_recommendation
+  - get_company_info
+
+entities:
+  - formation
+  - session
+  - prix
+  - date
+  - financement
+  - CPF
+  - niveau
+  - indicateurs
+  - satisfaction
+  - emploi
+  - objectif
+  - compétence
+  - profil
+  - métier
+
+slots:
+  formation:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: formation
+  session:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: session
+  prix:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: prix
+  date:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: date
+  financement:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: financement
+  indicateurs:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: indicateurs
+  satisfaction:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: satisfaction
+  emploi:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: emploi
+  objectif:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: objectif
+  compétence:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: compétence
+  profil:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: profil
+  métier:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: métier
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+  utter_did_that_help:
+  - text: "Did that help you?"
+  utter_happy:
+  - text: "Great, carry on!"
+  utter_goodbye:
+  - text: "Bye"
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+  utter_get_trainings:
+    - text: |
+        Voici les formations disponibles :
+        - Formation 1 : [Descriptif 1, Objectifs, Contenus]
+        - Formation 2 : [Descriptif 2, Objectifs, Contenus]
+  utter_get_dates_prices:
+    - text: |
+        Les prochaines sessions de formation :
+        - Formation 1 : du 1er au 15 Mars, Tarif : 1000 €
+        - Formation 2 : du 20 Mars au 5 Avril, Tarif : 1200 €
+  utter_get_registration:
+    - text: |
+        Pour vous inscrire, veuillez fournir les documents suivants :
+        - Pièce d'identité
+        - Formulaire d'inscription complété
+        - Attestation de prise en charge (si applicable)
+  utter_get_prerequisites:
+    - text: |
+        Chaque formation a ses propres prérequis. Contactez-nous pour des détails spécifiques.
+  utter_get_financing:
+    - text: |
+        Vous pouvez bénéficier d'une prise en charge par :
+        - CPF
+        - Pôle Emploi
+        - Votre employeur
+  utter_get_indicators:
+    - text: |
+        Nos indicateurs de performance :
+        - Taux de réussite : 95 %
+        - Taux de satisfaction : 98 %
+        - Taux de retour à l'emploi : 90 %
+  utter_get_recommendation:
+    - text: "Pour vous aider à choisir une formation adaptée, veuillez répondre à quelques questions. Quel est votre objectif principal ?"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
