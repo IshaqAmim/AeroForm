@@ -5,17 +5,15 @@ FROM python:3.10-slim
 WORKDIR /app
 
 # Copier les fichiers nécessaires dans le conteneur
-COPY requirements.txt .
-COPY . .
+COPY requirements.txt .  # Copie uniquement requirements.txt pour éviter une reinstallation inutile des dépendances si seul le code change
+COPY . .  # Copier le reste des fichiers du projet
 
 # Mettre à jour pip et installer les dépendances
-RUN pip install --upgrade pip
+RUN pip install --upgrade pip \
+    && pip install --no-cache-dir -r requirements.txt
 
-# Installer les dépendances
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Exposer le port utilisé par Rasa
+# Exposer le port (le port sera récupéré par Render via la variable d'environnement PORT)
 EXPOSE 5005
 
-# Commande pour démarrer Rasa
-CMD ["rasa", "run", "--enable-api", "--cors", "*", "--port", "5055", "--host", "0.0.0.0"]
+# Commande pour démarrer Rasa, utilise la variable d'environnement pour le port et le host dynamique
+CMD ["rasa", "run", "--enable-api", "--cors", "*", "--port", "5005", "--host", "0.0.0.0"]
