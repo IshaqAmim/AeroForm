@@ -1,0 +1,74 @@
+version: "3.1"
+
+stories:
+  - story: happy path
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_great
+      - action: utter_happy
+
+  - story: sad path 1
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: affirm
+      - action: utter_happy
+
+  - story: sad path 2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mood_unhappy
+      - action: utter_cheer_up
+      - action: utter_did_that_help
+      - intent: deny
+      - action: utter_goodbye
+
+  - story: greeting_and_training_information
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: get_trainings
+      - action: utter_get_trainings
+
+  - story: training_information
+    steps:
+      - intent: get_trainings
+      - action: utter_get_trainings
+
+  - story: session_information
+    steps:
+      - intent: get_dates_prices
+      - action: utter_get_dates_prices
+
+  - story: registration_procedure
+    steps:
+      - intent: get_registration
+      - action: utter_get_registration
+  
+  - story: Get indicators
+    steps:
+      - intent: get_indicators
+      - action: utter_get_indicators
+
+  - story: Get prerequisites
+    steps:
+      - intent: get_prerequisites
+      - action: utter_get_prerequisites
+
+  - story: financing_options
+    steps:
+      - intent: get_financing
+      - action: utter_get_financing
+
+  - story: recommendation
+    steps:
+      - intent: get_recommendation
+      - action: utter_get_recommendation
+      - slot_was_set:
+          - formation: null
+      - action: utter_get_trainings

@@ -1,0 +1,155 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: get_trainings
+  examples: |
+    - Quelles [formations] proposez-vous ?  # [formations] (entité)
+    - Je voudrais connaître vos [formations].  # [formations] (entité)
+    - Parlez-moi des [formations] disponibles.  # [formations] (entité)
+    - [Cours] disponibles.  # [formations] (entité)
+    - Quels sont les [programmes de formation] ?  # [formations] (entité)
+    - Montrez-moi vos [formations].  # [formations] (entité)
+
+- intent: get_dates_prices
+  examples: |
+    - Quelles sont les [dates] des prochaines [sessions] ?  # [dates] (entité), [session] (entité)
+    - Quand commencent les [formations] ?  # [formations] (entité)
+    - Quels sont les [tarifs] des [formations] ?  # [tarifs] (entité), [formations] (entité)
+    - Combien coûtent les [sessions] ?  # [session] (entité)
+    - Quelles sont les [dates] et [tarifs] des [formations] ?  # [dates] (entité), [tarifs] (entité), [formations] (entité)
+
+- intent: get_registration
+  examples: |
+    - Comment m’inscrire ?  # pas d'entité spécifique
+    - Quelles sont les démarches pour m’inscrire ?  # pas d'entité spécifique
+    - Parlez-moi des procédures d’inscription.  # pas d'entité spécifique
+    - Je veux m'inscrire à une [formation].  # [formation] (entité)
+    - Quelles sont les étapes d’inscription ?  # pas d'entité spécifique
+    - Comment s'inscrire à la [formation] XYZ ?  # [formation] (entité)
+
+- intent: get_prerequisites
+  examples: |
+    - Quels sont les [prérequis] pour cette [formation] ?  # [prérequis] (entité), [formation] (entité)
+    - Est-ce que j’ai besoin d’[expérience] pour m’inscrire ?  # [expérience] (entité)
+    - Conditions d'accès aux [formations].  # [formations] (entité)
+    - Faut-il avoir un [niveau] spécifique ?  # [niveau] (entité)
+
+- intent: get_financing
+  examples: |
+    - Quelles sont les modalités de [financement] disponibles ?  # [financement] (entité)
+    - Est-ce que je peux avoir une [prise en charge] ?  # [financement] (entité)
+    - Y a-t-il des [financements] possibles ?  # [financement] (entité)
+    - Peut-on utiliser le [CPF] pour financer cette [formation] ?  # [financement] (entité), [CPF] (entité), [formation] (entité)
+
+- intent: get_indicators
+  examples: |
+    - Quels sont vos taux de [réussite] ?  # [réussite] (entité)
+    - Parlez-moi des [indicateurs] clés.  # [indicateurs] (entité)
+    - Statistiques sur vos [formations].  # [formations] (entité), [indicateurs] (entité)
+    - Quel est votre taux de [satisfaction] ?  # [satisfaction] (entité)
+    - Quel est votre taux de retour à l’[emploi] ?  # [emploi] (entité)
+
+- intent: get_recommendation
+  examples: |
+    - Quelle [formation] me recommandez-vous ?  # [formation] (entité)
+    - Je veux une [formation] adaptée à mes [objectifs].  # [formation] (entité), [objectifs] (entité)
+    - Proposez-moi une [formation] selon mon [profil].  # [formation] (entité), [profil] (entité)
+    - J’ai besoin d'une [formation] pour améliorer mes [compétences].  # [formation] (entité), [compétences] (entité)
+    - Quelle [formation] me conviendrait pour progresser dans mon [métier] ?  # [formation] (entité), [métier] (entité)
+
+- intent: get_company_info
+  examples: |
+    - Parlez-moi d'[Aeroform].  # [Aeroform] (entité)
+    - Quels sont les avantages d’[Aeroform] ?  # [Aeroform] (entité)
+    - Pourquoi choisir [Aeroform] ?  # [Aeroform] (entité)
+    - Qu'est-ce qui distingue [Aeroform] des autres centres de formation ?  # [Aeroform] (entité)
+    - [Aeroform] est-il accrédité ?  # [Aeroform] (entité)
